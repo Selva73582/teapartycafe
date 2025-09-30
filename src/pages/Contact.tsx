@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, Instagram } from 'lucide-react';
 
 const Contact = () => {
@@ -95,11 +95,25 @@ const Contact = () => {
             </div>
 
             {/* Map Placeholder */}
-            <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-2" />
-                <p className="text-gray-500">Interactive Map</p>
-                <p className="text-sm text-gray-400">123 Garden Street, Downtown District</p>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="p-4 border-b border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-800">Find Us</h3>
+                <p className="text-sm text-gray-600">Tea Party. Kullanru, Pochampally TK, Krishnagiri DI, - 635 206 Tamilnadu</p>
+              </div>
+              <div className="h-64 w-full bg-gray-100 flex items-center justify-center">
+                <div className="text-center">
+                  <MapPin className="h-12 w-12 text-amber-600 mx-auto mb-2" />
+                  <p className="text-gray-600 font-medium">Tea Party Restaurant</p>
+                  <p className="text-sm text-gray-500">Krishnagiri, Tamilnadu</p>
+                  <a 
+                    href="https://maps.app.goo.gl/agmQ8JmkuBfhqwg18?g_st=ipc" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block mt-2 bg-amber-600 text-white px-4 py-2 rounded hover:bg-amber-700 transition-colors"
+                  >
+                    View on Google Maps
+                  </a>
+                </div>
               </div>
             </div>
           </div>

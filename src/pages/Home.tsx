@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Clock, Star, Coffee, Users } from 'lucide-react';
 
 const Home = () => {
@@ -22,15 +23,21 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Tea Party Restaurant - Best Indian & Chinese Food in Krishnagiri, Tamilnadu</title>
+        <meta name="description" content="Tea Party Restaurant in Krishnagiri offers authentic Indian & Chinese cuisine with 200+ dishes. Open 11 AM - 11 PM daily. Family dining, corporate meals, and special celebrations." />
+        <meta name="keywords" content="restaurant Krishnagiri, Indian food Tamilnadu, Chinese food Krishnagiri, Tea Party restaurant, authentic cuisine, family dining" />
+      </Helmet>
+      
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-amber-100 to-orange-100">
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="relative z-10 text-center px-4">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
-            Welcome to Tea Party
+            Welcome to Tea Party Restaurant
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            An Elegant Tea Party Experience with Exquisite Cuisine and Warm Hospitality
+            Authentic Indian & Chinese Cuisine in Krishnagiri, Tamilnadu - Where Every Meal is a Celebration
           </p>
           <div className="space-x-4">
             <Link to="/menu" className="inline-block bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105">
@@ -48,9 +55,9 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Clock className="h-12 w-12 text-amber-600 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Opening Hours</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Restaurant Hours & Location</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We're open daily to serve you the finest dining experience
+              Visit Tea Party Restaurant in Krishnagiri, Tamilnadu for authentic Indian and Chinese cuisine. We're open daily from 11 AM to 11 PM to serve you the finest dining experience with fresh ingredients and traditional recipes.
             </p>
           </div>
 
@@ -75,9 +82,9 @@ const Home = () => {
       <section className="py-16 bg-amber-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose Tea Party?</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose Tea Party Restaurant in Krishnagiri?</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Discover what makes our tea party experience truly special
+              Experience the best of Indian and Chinese cuisine in Tamilnadu. Our restaurant combines authentic flavors, fresh ingredients, and warm hospitality to create memorable dining experiences for families, friends, and corporate gatherings.
             </p>
           </div>
 
@@ -99,14 +106,49 @@ const Home = () => {
         </div>
       </section>
 
+      {/* SEO Content Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">Authentic Indian & Chinese Cuisine in Krishnagiri</h2>
+              <div className="space-y-4 text-gray-600">
+                <p>
+                  Tea Party Restaurant is the premier destination for authentic Indian and Chinese cuisine in Krishnagiri, Tamilnadu. Our extensive menu features over 200 carefully crafted dishes, from traditional Indian curries and biryanis to flavorful Chinese noodles and stir-fries.
+                </p>
+                <p>
+                  Located at 2/95/D, Dharmapuri Main Road, Kullanru, Pochampally TK, our restaurant offers a warm and inviting atmosphere perfect for family dinners, corporate meals, and special celebrations. We pride ourselves on using fresh, locally-sourced ingredients and traditional cooking methods.
+                </p>
+                <p>
+                  Whether you're craving spicy Indian starters like Chicken 65 and Gobi Manchurian, or prefer Chinese favorites like Prawn Noodles and Mixed Veg Fried Rice, our skilled chefs prepare each dish with authentic flavors and attention to detail.
+                </p>
+              </div>
+            </div>
+            <div className="bg-amber-50 p-8 rounded-lg">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Specialties</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Authentic Indian Rice & Noodle Dishes</li>
+                <li>• Traditional Chinese Cuisine</li>
+                <li>• Fresh Vegetarian & Non-Vegetarian Options</li>
+                <li>• Pizza, Burger & Sandwich Menu</li>
+                <li>• Delicious Momos & Snacks</li>
+                <li>• Premium Ice Cream & Falooda</li>
+                <li>• Refreshing Soda & Beverages</li>
+                <li>• Private Dining & Event Catering</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-16 bg-gradient-to-r from-amber-600 to-orange-600">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Ready for a Memorable Tea Party Experience?
+            Ready for a Memorable Dining Experience?
           </h2>
           <p className="text-xl text-amber-100 mb-8">
-            Book your table today and indulge in our exquisite menu
+            Book your table today and indulge in our exquisite menu of authentic Indian & Chinese cuisine
           </p>
           <Link to="/reservations" className="inline-block bg-white text-amber-600 hover:bg-amber-50 px-8 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105">
             Reserve Your Table

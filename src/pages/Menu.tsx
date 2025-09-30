@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { menuData } from '../data/menuData';
 
 const Menu = () => {
@@ -6,11 +7,17 @@ const Menu = () => {
 
   return (
     <div className="min-h-screen py-16">
+      <Helmet>
+        <title>Menu - Tea Party Restaurant | Indian & Chinese Food in Krishnagiri, Tamilnadu</title>
+        <meta name="description" content="Explore our extensive menu with 200+ authentic Indian & Chinese dishes in Krishnagiri. Rice items, noodles, starters, pizza, burgers, momos, ice cream, and more. Affordable prices, fresh ingredients." />
+        <meta name="keywords" content="menu Krishnagiri, Indian food menu, Chinese food menu, restaurant menu Tamilnadu, rice items, noodles, starters, pizza, burger, momos" />
+      </Helmet>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">Our Menu</h1>
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">Our Complete Menu - Indian & Chinese Cuisine</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover our carefully curated selection of authentic Indian & Chinese cuisine
+            Discover our carefully curated selection of 200+ authentic Indian & Chinese dishes in Krishnagiri, Tamilnadu. From traditional rice items and noodles to modern pizza and burgers, we offer something for every palate.
           </p>
         </div>
 
