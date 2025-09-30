@@ -50,7 +50,7 @@ const FAQ = () => {
   {
     category: "Location",
     question: "Where is Tea Party located?",
-    answer: "Tea Party restaurant is conveniently located at 2/95/D, Dharmapuri Main Road, Kullanru, Pochampally TK, Krishnagiri DI, - 635 206 Tamilnadu. Search 'Tea Party restaurant near me' on Google Maps and you'll find us easily."
+    answer: "Tea Party restaurant is conveniently located at Tea Party, Kullanru, Pochampally TK, Krishnagiri DI, - 635 206 Tamilnadu. Search 'Tea Party restaurant near me' on Google Maps and you'll find us easily."
   },
   {
     category: "General",

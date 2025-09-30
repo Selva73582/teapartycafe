@@ -117,7 +117,7 @@ const Home = () => {
                   Tea Party Restaurant is the premier destination for authentic Indian and Chinese cuisine in Krishnagiri, Tamilnadu. Our extensive menu features over 200 carefully crafted dishes, from traditional Indian curries and biryanis to flavorful Chinese noodles and stir-fries.
                 </p>
                 <p>
-                  Located at 2/95/D, Dharmapuri Main Road, Kullanru, Pochampally TK, our restaurant offers a warm and inviting atmosphere perfect for family dinners, corporate meals, and special celebrations. We pride ourselves on using fresh, locally-sourced ingredients and traditional cooking methods.
+                  Located at Tea Party, Kullanru, Pochampally TK, Krishnagiri DI, our restaurant offers a warm and inviting atmosphere perfect for family dinners, corporate meals, and special celebrations. We pride ourselves on using fresh, locally-sourced ingredients and traditional cooking methods.
                 </p>
                 <p>
                   Whether you're craving spicy Indian starters like Chicken 65 and Gobi Manchurian, or prefer Chinese favorites like Prawn Noodles and Mixed Veg Fried Rice, our skilled chefs prepare each dish with authentic flavors and attention to detail.

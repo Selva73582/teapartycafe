@@ -44,7 +44,7 @@ const Footer = () => {
             <div className="space-y-2 text-sm text-gray-300">
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-amber-400" />
-                <span>Tea Party Restaurant, 2/95/D, Dharmapuri Main Road, Kullanru, Pochampally TK, Krishnagiri DI, - 635 206 Tamilnadu</span>
+                <span>Tea Party Restaurant, Kullanru, Pochampally TK, Krishnagiri DI, - 635 206 Tamilnadu</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-amber-400" />

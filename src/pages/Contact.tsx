@@ -44,8 +44,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-gray-800">Address</h3>
                     <p className="text-gray-600">
-                      2/95/D, Dharmapuri Main Road<br />
-                      Kullanru, Pochampally TK<br />
+                      Tea Party, Kullanru, Pochampally TK<br />
                       Krishnagiri DI, - 635 206 Tamilnadu
                     </p>
                   </div>
@@ -98,7 +97,7 @@ const Contact = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="p-4 border-b border-gray-200">
                 <h3 className="text-lg font-semibold text-gray-800">Find Us</h3>
-                <p className="text-sm text-gray-600">Tea Party. Kullanru, Pochampally TK, Krishnagiri DI, - 635 206 Tamilnadu</p>
+                <p className="text-sm text-gray-600">Tea Party, Kullanru, Pochampally TK, Krishnagiri DI, - 635 206 Tamilnadu</p>
               </div>
               <div className="h-64 w-full bg-gray-100 flex items-center justify-center">
                 <div className="text-center">

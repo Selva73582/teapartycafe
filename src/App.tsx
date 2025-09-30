@@ -20,7 +20,7 @@ function App() {
     "email": "teapartunity@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "2/95/D, Dharmapuri Main Road, Kullanru, Pochampally TK",
+      "streetAddress": "Tea Party, Kullanru, Pochampally TK",
       "addressLocality": "Krishnagiri",
       "addressRegion": "Tamilnadu",
       "postalCode": "635 206",
