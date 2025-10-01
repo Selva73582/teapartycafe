@@ -5,8 +5,19 @@ import { menuData } from '../data/menuData';
 const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState('Rice Items');
 
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    // Smooth scroll to menu items on mobile
+    setTimeout(() => {
+      const menuItems = document.querySelector('.menu-items');
+      if (menuItems && window.innerWidth < 640) {
+        menuItems.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
   return (
-    <div className="min-h-screen py-16">
+    <div className="min-h-screen py-16 sm:py-16">
       <Helmet>
         <title>Menu - Tea Party Restaurant | Indian & Chinese Food in Krishnagiri, Tamilnadu</title>
         <meta name="description" content="Explore our extensive menu with 200+ authentic Indian & Chinese dishes in Krishnagiri. Rice items, noodles, starters, pizza, burgers, momos, ice cream, and more. Affordable prices, fresh ingredients." />
@@ -21,33 +32,44 @@ const Menu = () => {
           </p>
         </div>
 
-        {/* Category Filters */}
-        <div className="flex flex-wrap justify-center mb-12 gap-4">
-          {Object.keys(menuData).map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-lg font-medium transition duration-300 ${
-                selectedCategory === category
-                  ? 'bg-amber-600 text-white'
-                  : 'bg-white text-gray-700 hover:bg-amber-100 border border-gray-200'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+        {/* Category Filters - Sticky on Mobile */}
+        <div className="sticky top-16 z-10 bg-amber-50 py-4 -mx-4 px-4 mb-8 sm:mb-12 sm:static sm:bg-transparent sm:py-0">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+            {Object.keys(menuData).map((category) => (
+              <button
+                key={category}
+                onClick={() => handleCategoryChange(category)}
+                className={`px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-medium transition duration-300 text-sm sm:text-base ${
+                  selectedCategory === category
+                    ? 'bg-amber-600 text-white'
+                    : 'bg-white text-gray-700 hover:bg-amber-100 border border-gray-200'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Menu Items */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="menu-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {menuData[selectedCategory as keyof typeof menuData]?.map((item, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-semibold text-gray-800">{item.name}</h3>
-                  <span className="text-2xl font-bold text-amber-600">Rs. {item.price}</span>
+              <div className="p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 gap-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 leading-tight flex-1">
+                    {item.name}
+                  </h3>
+                  <div className="text-right">
+                    <div className="text-lg sm:text-xl font-bold text-amber-600 leading-tight">
+                      <div className="text-sm sm:text-base">Rs.</div>
+                      <div className="text-lg sm:text-xl">{item.price}</div>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-gray-600">{item.description}</p>
+                {item.description && (
+                  <p className="text-gray-600 text-sm sm:text-base">{item.description}</p>
+                )}
               </div>
             </div>
           ))}
