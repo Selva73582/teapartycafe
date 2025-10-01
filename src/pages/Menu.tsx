@@ -1,23 +1,38 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { menuData } from '../data/menuData';
 
 const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState('Rice Items');
+  const menuItemsRef = useRef<HTMLDivElement>(null);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
-    // On mobile, scroll to the top of the menu items to show the first item
-    if (window.innerWidth < 640) {
-      setTimeout(() => {
-        const menuItems = document.querySelector('.menu-items');
-        if (menuItems) {
-          // Scroll to the very top of the menu items container
-          menuItems.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 50);
-    }
   };
+
+  // Handle scrolling when category changes on mobile
+  useEffect(() => {
+    if (window.innerWidth < 640 && menuItemsRef.current) {
+      const timer = setTimeout(() => {
+        const menuItems = menuItemsRef.current;
+        if (menuItems) {
+          // Get the position of the menu items container
+          const rect = menuItems.getBoundingClientRect();
+          const stickyBarHeight = 100; // Height of sticky bar + header + padding
+          
+          // Calculate the scroll position to show the first item clearly
+          const scrollPosition = window.pageYOffset + rect.top - stickyBarHeight;
+          
+          window.scrollTo({
+            top: Math.max(0, scrollPosition),
+            behavior: 'smooth'
+          });
+        }
+      }, 150);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [selectedCategory]);
 
   return (
     <div className="min-h-screen py-16 sm:py-16">
@@ -55,7 +70,11 @@ const Menu = () => {
         </div>
 
         {/* Menu Items */}
-        <div key={selectedCategory} className="menu-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div 
+          ref={menuItemsRef}
+          key={selectedCategory} 
+          className="menu-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+        >
           {menuData[selectedCategory as keyof typeof menuData]?.map((item, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
               <div className="p-4 sm:p-6">
